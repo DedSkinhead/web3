@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pr6</title>
+</head>
+<body>
+  <h3>Практическая работа 6</h3><hr>
+  <b>Поле ввода содержит такой текст</b><br>
+  <i id="mytext" style="font-size:25pt;color:red;"></i></br>
+  <input type="text" id="textField" size="62" ><br>
+  <input type="button" id="applyButton" value="Применить" style="width:200px;height:30px">
+  <button id="inlockButton" style="width:200px ; height: 30px;">Разблокировать</button>
+  <p id="myprompt"></p>
+  
+  <SCRIPT LANGUAGE=”JavaScript”  type="text/javascript"> 
+  var msgA= "В поле вводится текс. Кнопка Применить позволяет втавить текст в документ. Кнопка разблокировать делает доступным поле ввода и кнопку Приемнить."
+  var msgB= "Введите текст в поле ввода и щелкните кнопку Применить"
+  var msgC= "для отмены блокировки полня и кнопки Применить щелкните кнопку Разблокировать"
+ var tf = textField
+ var ab = applyButton
+ var ub = inlockButton
+ var mt = mytext
+ var mp = myprompt
+  window.onload=function(){
+    tf.onmouseover=function(){
+    if(!this.disabled){
+      setColor(true)
+      
+    }
+    else{
+      setColor(false)
+    }
+  }
+  tf.onmouseout=function(){
+    
+      setColor(false)
+    
+  }
+  ab.onmouseover=function(){
+    if(!this.disabled){
+      applyPrompt(msgB)
+      
+    }
+  }
+  ab.onmouseout=function(){
+    
+    applyPrompt(msgA)
+    
+  }
+  ub.onmouseover=function(){
+    if(!this.disabled){
+      applyPrompt(msgC)
+      
+    }
+  }
+  ub.onmouseout=function(){
+    
+    applyPrompt(msgA)
+    
+  }
+  ab.onclick=function(){
+    mt.innerHTML=tf.value
+    tf.disabled=true
+    ub.disabled=false
+    ab.disabled=true
+  }
+  ub.onclick=function(){
+    tf.value=""
+    mt.innerHTML=""
+    tf.disabled=false
+    ab.disabled=false
+    ub.disabled=true
+  }
+  tf=document.getElementById("textField")
+  ab=document.getElementById("applyButton")
+  ub=document.getElementById("inlockButton")
+  mt=document.getElementById("mytext")
+  mp=document.getElementById("myprompt")
+  setColor(false)
+  tf.value=''
+  tf.disabled=false
+  ub.disabled=true
+  ab.disabled=false
+  applyPrompt(msgA)
+ 
+}
+function applyPrompt(msg){
+  mp.innerHTML=msg
+}
+function setColor(arg){
+  if(arg){
+  tf.style.backgroundColor="yellow" 
+  tf.style.borderColor="red" 
+}
+else {
+  tf.style.backgroundColor="white" 
+  tf.style.borderColor="gray"
+}
+}
+  </SCRIPT>
+</body>
+</html>

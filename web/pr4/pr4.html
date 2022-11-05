@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pr4</title>
+</head>
+<body>
+  <input type="button" value="Нажмите на кнопку" onclick="countB(str)">
+  <input type="button"  value="Нажмите на кнопку" onclick="countChar(str2)">
+  <SCRIPT LANGUAGE=”JavaScript”  type="text/javascript"> 
+console.log('Zadanie 3')
+var str = prompt("Введите струку: ",);
+function countB(str)
+{
+  var g = str.length;
+  var b=0
+  for(i=0;i<g;i++){
+  var h =str.charAt(i)
+  if(h=="B")
+  b++;  
+}
+ console.log(b)
+};
+var str2 = prompt("Введите струку: ",);
+function countChar(str2)
+{
+  var char = prompt("Введите букву: ",);
+  var g = str2.length;
+  var b=0
+  for(i=0;i<g;i++){
+  var h =str2.charAt(i)
+  if(h==char)
+  b++;  
+}
+ console.log(b)
+};
+  </SCRIPT>
+</body>
+</html>

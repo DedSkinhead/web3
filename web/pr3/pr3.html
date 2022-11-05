@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pr3</title>
+</head>
+<body>
+  <SCRIPT LANGUAGE=”JavaScript” type="text/javascript"> 
+console.log('Zadanie 1');
+let str = "#"
+while(str.length<=7)
+{
+  console.log(str)
+  str+="#"
+}
+console.log('Zadanie 2');
+let sto = 1
+while(sto<20){
+  if(sto%3==0 && sto%5!=0){
+    let sto = "Три"
+    console.log(sto)
+  }
+  else if(sto%5==0 && sto%3!=0){
+    let sto = "Пять"
+    console.log(sto)
+  }
+  else if(sto%5==0 && sto%3==0){
+    let sto = "ТриПять"
+    console.log(sto)
+  }
+  else{
+    console.log(sto)
+  }
+  sto++
+}
+  console.log('Zadanie 3');
+  var size= 8;
+  var board = "";
+ for(var i=0;i<size;i++){
+  for(var u=0;u<size;u++){
+    if((i+u)%2==0)
+    board += " ";
+    else
+    board+="#";
+} 
+board+="\n";
+ }  
+ console.log(board);
+  </SCRIPT>
+</body>
+</html>
